@@ -157,3 +157,4 @@ class hypernet_setting():
 class test_setting():
     isupdate = True
     show_window = 100
+# version 1
