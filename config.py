@@ -158,3 +158,4 @@ class test_setting():
     isupdate = True
     show_window = 100
 # version 1
+# version 2
