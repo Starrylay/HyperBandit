@@ -51,12 +51,12 @@ class BaseItemStruct:
 
 
 class FactorUCBAlgorithm:
-    def __init__(self):  # n is number of users
+    def __init__(self, itemobserved_dim):  # n is number of users
         self.alpha = config.general_setting.alpha
         self.item_num = config.general_setting.item_num
         self.lambda_ = config.FactorUCB_setting.lambda_
-        self.observed_dim = config.FactorUCB_setting.item_observed_dimension
-        self.latent_dim = config.FactorUCB_setting.item_latent_dimension
+        self.observed_dim = itemobserved_dim
+        self.latent_dim = config.FactorUCB_setting.user_observed_dimension - itemobserved_dim
         self.ItemStruct_total = []
         for item_id in range(self.item_num):
             self.ItemStruct_total.append(
@@ -92,7 +92,7 @@ class FactorUCBAlgorithm:
         temps = np.matmul(items_context, Theta)
         means = np.matmul(temps, user_feature)
 
-        ThetaX = Theta[config.FactorUCB_setting.item_observed_dimension:, :] # dl * du(user dimension)
+        ThetaX = Theta[self.observed_dim:, :] # dl * du(user dimension)
         P_line_temp = np.dot(ThetaX, user_feature).T  # 1 * dl
 
         vars = alpha * np.sqrt(np.matmul(np.matmul(P_line_temp, Psis_inv), P_line_temp.T))

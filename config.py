@@ -33,7 +33,7 @@ class general_setting:
         cluster_num = 40
         item_num = 20000
 
-    iscluster = True
+    iscluster = False
     alpha = 0.1
     lambda_ = 0.1
 
@@ -107,11 +107,16 @@ class FactorUCB_setting(general_setting):
     #参数设置
     # item
     item_observed_dimension = 1 #do <= 10 5
-    item_latent_dimension = 24 #dl 5 待学习
-    item_dimension = item_observed_dimension + item_latent_dimension
-    # user
     user_observed_dimension = 25 # du(待学习)
+
+    item_latent_dimension = user_observed_dimension - item_observed_dimension  #dl 5 待学习
+    
+    item_dimension = user_observed_dimension
+    # user
+   
     alpha2 = 0.1
+
+
 
 
 
@@ -158,6 +163,3 @@ class test_setting():
     isupdate = True
     show_window = 100
 # version 1
-#test
-#试试新的分支version
-#加点东西

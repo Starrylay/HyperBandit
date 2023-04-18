@@ -46,12 +46,14 @@ def hypernetwork_input_building(time, user_id, UserFeatureVectors):
 
 #global 实例
 algresult = AlgResult()
-# algresult.algorithms["LinUCB_ItemBased"] = LinUCB.LinUCBAlgorithm_ItemBased()
+algresult.algorithms["LinUCB_ItemBased"] = LinUCB.LinUCBAlgorithm_ItemBased()
 # algresult.algorithms["LinUCB"] = LinUCB.LinUCBAlgorithm_UserBased()
 # algresult.algorithms["HybridLinUCB"] = HybridLinUCB.Hybrid_LinUCBAlgorithm()
 # algresult.algorithms["FactorUCB N Hyper"] = FactorUCB.FactorUCBAlgorithm() # 实例1
-# algresult.algorithms["HyperBandit"] = FactorUCB.FactorUCBAlgorithm() # 实例2
-algresult.algorithms["FactorUCB w/o W"] = factorUCB.FactorUCBAlgorithm(W_type = "None")
+for item_observed_dim in range(26):
+    algresult.algorithms["HyperBandit w/o Hyper {}".format(item_observed_dim)] = FactorUCB.FactorUCBAlgorithm(item_observed_dim)
+#algresult.algorithms["HyperBandit"] = FactorUCB.FactorUCBAlgorithm() # 实例2
+# algresult.algorithms["FactorUCB w/o W"] = factorUCB.FactorUCBAlgorithm(W_type = "None")
 # algresult.algorithms["FactorUCB"] = factorUCB.FactorUCBAlgorithm(W_type = "Have")
 # algresult.algorithms["DLinUCB"] = dLinUCB.DLinUCBAlgorithm()
 # algresult.algorithms["ColinUCB w/o W"] = ColinUCB.CoLinUCBAlgorithm(W_type = "None")
