@@ -106,20 +106,15 @@ FactorUCB
 class FactorUCB_setting(general_setting):
     #参数设置
     # item
-    item_observed_dimension = 1 #do <= 10 5
-    user_observed_dimension = 25 # du(待学习)
+    # item_observed_dimension = 1 #do <= 10 5
+    user_observed_dimension = 30 # du(待学习)
 
-    item_latent_dimension = user_observed_dimension - item_observed_dimension  #dl 5 待学习
+    # item_latent_dimension = user_observed_dimension - item_observed_dimension  #dl 5 待学习
     
     item_dimension = user_observed_dimension
     # user
    
     alpha2 = 0.1
-
-
-
-
-
 
 """
 

@@ -67,7 +67,8 @@ class FactorUCBAlgorithm:
         item_picked_info = None
         #为每个item 赋值
         for item_info in pool_items_info:
-            self.ItemStruct_total[item_info.id].observed_feature = item_info.observed_feature[:self.observed_dim]
+            # a = item_info.observed_feature[-self.observed_dim:]
+            self.ItemStruct_total[item_info.id].observed_feature = item_info.observed_feature[-self.observed_dim:]
         items_pta = self.getProb(self.alpha, pool_items_info, user_info, Theta)
         maxid = np.argmax(items_pta)
         item_picked_info = pool_items_info[maxid]       
