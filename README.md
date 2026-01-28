@@ -4,7 +4,7 @@
 [![Paper](https://img.shields.io/badge/TOIS-red)](https://arxiv.org/pdf/2308.08497)
 [![arXiv](https://img.shields.io/badge/arXiv-2308.08497-b31b1b.svg)](https://arxiv.org/pdf/2308.08497)
 
-This repository provides the official PyTorch implementation for the **CIKM 23 Oral** paper **"HyperBandit: Contextual Bandit with Hypernetwork for Time-Varying User Preferences in Streaming Recommendation"** and the **TOIS** paper **"Enhancing Bandit Algorithms with LLMs for Time-varying User Preferences in Streaming Recommendations"**
+This repository provides the official PyTorch implementation for the **CIKM 23 Oral** paper **"HyperBandit: Contextual Bandit with Hypernetwork for Time-Varying User Preferences in Streaming Recommendation"** and the **TOIS** paper (HyperBandit+) **"Enhancing Bandit Algorithms with LLMs for Time-varying User Preferences in Streaming Recommendations"**
 
 
 ## Quick Start
@@ -47,7 +47,6 @@ This repository provides the official PyTorch implementation for the **CIKM 23 O
 - ✅ **HyperBandit:** use `--feature="glove_pca"`.
 - 🟦 **HyperBandit+:** use `--feature="LLM_with_attribute_pca"`.
 
-### Run SpecGR for Recommendation Using Preprocessed Data and Checkpoints
 
 ```bash
 bash scripts/quick_start.sh
