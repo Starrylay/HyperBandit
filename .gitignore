@@ -1,0 +1,38 @@
+默认忽略的文件
+
+/dataset/*.csv
+/dataset/**/*.csv
+/dataset/*.txt
+/dataset/**/*.txt
+/dataset/*.zip
+/dataset/**/*.zip
+/dataset/ML-100k_data
+/dataset/meituan
+/dataset/Original_data
+/dataset/foursquare/5 dataset_WWW2019
+/dataset/kuairec/KuaiRec 2.0
+/lib/CatDM-main
+
+/**/*.png
+/**/*.jpg
+/**/*.pdf
+/**/*.svg
+/**/*.pkl
+# /**/*.json
+/**/*.npy
+# /**/*.dat
+/**/*.pyc
+/**/*.xml
+/**/*.pt
+/**/*.iml
+/**/*.log
+/**/*.md
+
+
+# /image
+
+# /model_log
+# /result_log
+
+
+
